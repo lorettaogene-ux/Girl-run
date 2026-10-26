@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#ffb8dc">
+  <title>Pink Run — Dreamy Dash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="game-frame">
+      <canvas id="gameCanvas" aria-label="Pink Run game"></canvas>
+
+      <div class="top-hud" id="topHud">
+        <div class="hud-pill"><span class="hud-icon">✦</span><span id="score">000000</span></div>
+        <div class="hud-pill coin-pill"><span class="coin-mini">●</span><span id="coins">0</span></div>
+        <button class="icon-button" id="pauseBtn" aria-label="Pause game">Ⅱ</button>
+      </div>
+
+      <section class="screen title-screen" id="titleScreen">
+        <div class="tiny-label">A CUTE LITTLE ADVENTURE</div>
+        <div class="logo-wrap">
+          <div class="logo-sparkle sparkle-one">✦</div>
+          <h1>PINK<br><span>RUN!</span></h1>
+          <div class="logo-heart">♥</div>
+        </div>
+        <p class="subtitle">Dash through the sweetest city<br>and collect your sparkle coins!</p>
+        <div class="hero-preview">
+          <div class="preview-cloud cloud-left"></div>
+          <div class="preview-cloud cloud-right"></div>
+          <div class="hero-emoji">૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+          <div class="preview-girl" aria-hidden="true">
+            <div class="hair"></div><div class="head"><div class="fringe"></div><i class="eye e1"></i><i class="eye e2"></i><i class="blush b1"></i><i class="blush b2"></i><i class="mouth"></i></div>
+            <div class="hoodie"><span>♥</span></div><div class="arm a1"></div><div class="arm a2"></div><div class="leg l1"></div><div class="leg l2"></div><div class="shoe s1"></div><div class="shoe s2"></div>
+            <div class="headphones"></div>
+          </div>
+        </div>
+        <button class="primary-button" id="playBtn">LET'S RUN <span>➜</span></button>
+        <button class="text-button" id="wardrobeBtn">♡ Choose your look</button>
+        <div class="bottom-note">MADE OF SUGAR, SPARKLES & GOOD VIBES</div>
+      </section>
+
+      <section class="screen pause-screen hidden" id="pauseScreen">
+        <div class="modal-card">
+          <div class="modal-icon">☁</div>
+          <div class="tiny-label">TAKE A BREATHER</div>
+          <h2>Time for a<br><span>tiny break?</span></h2>
+          <p>Your sparkle adventure is waiting.</p>
+          <button class="primary-button" id="resumeBtn">KEEP RUNNING <span>➜</span></button>
+          <button class="secondary-button" id="pauseHomeBtn">BACK TO HOME</button>
+        </div>
+      </section>
+
+      <section class="screen over-screen hidden" id="overScreen">
+        <div class="modal-card game-over-card">
+          <div class="trophy">🏆</div>
+          <div class="tiny-label">YOU DID AMAZING!</div>
+          <h2>Sweet<br><span>run!</span></h2>
+          <div class="result-grid">
+            <div><small>YOUR SCORE</small><strong id="finalScore">0</strong></div>
+            <div><small>SPARKLE COINS</small><strong id="finalCoins">0</strong></div>
+          </div>
+          <button class="primary-button" id="againBtn">RUN IT BACK <span>➜</span></button>
+          <button class="secondary-button" id="homeBtn">BACK TO HOME</button>
+        </div>
+      </section>
+
+      <section class="screen wardrobe-screen hidden" id="wardrobeScreen">
+        <div class="wardrobe-header"><button class="back-button" id="wardrobeBack">‹</button><div><div class="tiny-label">YOUR MAIN CHARACTER</div><h2>Pick your <span>vibe</span> ♡</h2></div></div>
+        <div class="wardrobe-stage">
+          <div class="stage-stars">✦　·　✧　·　✦</div>
+          <div class="preview-girl wardrobe-girl" id="wardrobeGirl">
+            <div class="hair"></div><div class="head"><div class="fringe"></div><i class="eye e1"></i><i class="eye e2"></i><i class="blush b1"></i><i class="blush b2"></i><i class="mouth"></i></div>
+            <div class="hoodie"><span>♥</span></div><div class="arm a1"></div><div class="arm a2"></div><div class="leg l1"></div><div class="leg l2"></div><div class="shoe s1"></div><div class="shoe s2"></div><div class="headphones"></div>
+          </div>
+        </div>
+        <div class="look-label">CHOOSE YOUR OUTFIT</div>
+        <div class="outfit-options">
+          <button class="outfit selected" data-look="pink"><span class="outfit-swatch pink-swatch">♡</span><b>Sweetheart</b><small>Bubblegum pink</small></button>
+          <button class="outfit" data-look="lilac"><span class="outfit-swatch lilac-swatch">✦</span><b>Dreamy</b><small>Lavender pop</small></button>
+          <button class="outfit" data-look="mint"><span class="outfit-swatch mint-swatch">☁</span><b>Cloud nine</b><small>Minty fresh</small></button>
+        </div>
+        <button class="primary-button wardrobe-play" id="wardrobePlay">LET'S GO <span>➜</span></button>
+      </section>
+
+      <div class="mobile-controls hidden" id="mobileControls">
+        <button id="leftBtn" aria-label="Move left">‹</button>
+        <button id="jumpBtn" aria-label="Jump">↑</button>
+        <button id="rightBtn" aria-label="Move right">›</button>
+      </div>
+      <div class="game-tip hidden" id="gameTip">TAP LEFT / RIGHT TO DODGE · JUMP OVER OBSTACLES</div>
+    </div>
+    <footer class="footer-note"><span>✦</span> PINK RUN <span class="footer-dot">•</span> DREAMY DASH <span>✦</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
